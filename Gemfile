@@ -8,6 +8,7 @@ source 'https://rubygems.org'
  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
  gem 'rails', '~> 5.1.2'
  gem 'devise'
+ gem 'bootstrap-sass'
 
  group :production do
    # Use pg as the production database for Active Record
@@ -37,4 +38,9 @@ source 'https://rubygems.org'
 
  group :development do
    gem 'listen', '~> 3.0.5'
+ end
+
+ group :development, :test do
+   gem 'rspec-rails', '~> 3.0'
+   gem 'rails-controller-testing'
  end
