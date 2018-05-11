@@ -9,6 +9,7 @@ source 'https://rubygems.org'
  gem 'rails', '~> 5.1.2'
  gem 'devise'
  gem 'bootstrap-sass'
+ gem "pundit"
 
  group :production do
    # Use pg as the production database for Active Record
