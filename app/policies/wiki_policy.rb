@@ -1,21 +1,16 @@
 class WikiPolicy < ApplicationPolicy
   attr_reader :user, :wiki
 
-    def index
-      user.standard?
+    def index?
+      true
     end
 
-    def show
+    def show?
       user.standard?
-    end
-
-    def initialize(user, wiki)
-        @user = user
-        @wiki = wiki
     end
 
     def create?
-        user.admin? || user.premium?
+      true
     end
 
     def new?
@@ -33,4 +28,4 @@ class WikiPolicy < ApplicationPolicy
     def destroy?
         user.admin? || user.premium?
     end
-end
+  end
