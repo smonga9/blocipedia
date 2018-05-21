@@ -11,6 +11,8 @@ source 'https://rubygems.org'
  gem 'bootstrap-sass'
  gem "pundit"
  gem 'faker'
+ gem 'stripe'
+ gem 'figaro', '1.0'
 
  group :production do
    # Use pg as the production database for Active Record
