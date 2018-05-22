@@ -13,6 +13,7 @@ source 'https://rubygems.org'
  gem 'faker'
  gem 'stripe'
  gem 'figaro', '1.0'
+ gem 'sqlite3'
 
  group :production do
    # Use pg as the production database for Active Record
