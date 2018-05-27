@@ -83,14 +83,13 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'gmail.com',
-    user_name:            ENV["Stutay.Monga9@gmail.com"],
-    password:             ENV["Orioles13@"],
-    authentication:       :plain,
-    enable_starttls_auto: true
-  }
+  :user_name => 'f8e467ec3c1f88',
+  :password => '7794ef92de6d7b',
+  :address => 'smtp.mailtrap.io',
+  :domain => 'smtp.mailtrap.io',
+  :port => '2525',
+  :authentication => :cram_md5
+}
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)

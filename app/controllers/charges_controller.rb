@@ -11,9 +11,8 @@ class ChargesController < ApplicationController
             description: "Blocipedia Membership - #{current_user.email}",
             currency: 'usd'
         )
-        
-        current_user.update_attribute(:standard, false)
-        current_user.update_attribute(:premium, true)
+
+        current_user.update_attribute(:role, 1)
 
         flash[:notice] = "Thanks for all the money, #{current_user.email}! Feel free to pay me again."
 

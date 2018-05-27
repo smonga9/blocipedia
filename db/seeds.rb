@@ -20,7 +20,7 @@ end
 # Create standard user
 1.times do
   User.create!(
-  email:    Faker::Name.title,
+  email:    Faker::Internet.email,
   password: 'helloworld'
   )
 end
@@ -34,7 +34,8 @@ users = User.all
      body:   RandomData.random_paragraph
    )
  end
- wikis = Wikis.all
+
+ wiki = Wiki.all
 
  puts "Seed finished"
  puts "#{User.count} users created"

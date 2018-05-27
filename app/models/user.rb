@@ -4,13 +4,23 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
-         has_many :wikis
+         has_many :wikis, dependent: :destroy
+  has_many :collaborators
 
-         def going_public
-          self.wikis.each { |wiki| puts wiki.publicize }
-        end
+  after_initialize :initialize_role
 
-         before_save { self.role ||= :standard }
+  enum role: [:standard, :premium, :admin]
 
-         enum role: [:standard, :premium, :admin]
+  def self.going_public(user)
+    @wikis = user.wikis.where(private: true)
+    @wikis.each do |wiki|
+      wiki.update_attribute(:private, false)
+    end
+  end
+
+  private
+
+  def initialize_role
+    self.role ||= :standard
+  end
 end
